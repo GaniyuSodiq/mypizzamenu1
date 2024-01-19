@@ -67,11 +67,24 @@ function Header() {
 }
 function Menu() {
   return (
-    <ul className="pizzas">
-      {pizzaData.map((pizza) => (
-        <Pizza pizzaObj={pizza} key={pizza.name} />
-      ))}
-    </ul>
+    <>
+      <div className="menu">
+        <h2>Our Menu</h2>
+        {pizzaData.length > 0 && (
+          <div>
+            <p>
+              Authentic Italian quisine. 6 creative dishes to choose from. All
+              from our stone oven. All organized, all deliciuos.
+            </p>
+            <ul className="pizzas">
+              {pizzaData.map((pizza) => (
+                <Pizza pizzaObj={pizza} key={pizza.name} />
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </>
   );
 }
 
