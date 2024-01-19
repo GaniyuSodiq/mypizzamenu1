@@ -70,8 +70,8 @@ function Menu() {
     <>
       <div className="menu">
         <h2>Our Menu</h2>
-        {pizzaData.length > 0 && (
-          <div>
+        {pizzaData.length > 0 ? (
+          <>
             <p>
               Authentic Italian quisine. 6 creative dishes to choose from. All
               from our stone oven. All organized, all deliciuos.
@@ -81,7 +81,9 @@ function Menu() {
                 <Pizza pizzaObj={pizza} key={pizza.name} />
               ))}
             </ul>
-          </div>
+          </>
+        ) : (
+          <p>We're currently working on our menu, please check back later</p>
         )}
       </div>
     </>
