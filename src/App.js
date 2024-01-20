@@ -104,11 +104,22 @@ function Pizza({ pizzaObj }) {
 }
 
 function Footer() {
-  return;
+  const hours = new Date().getHours();
+  const open = 12;
+  const close = 22;
+  const isOpen = hours >= open && hours <= close;
+  console.log(isOpen);
+
+  return <div></div>;
 }
 
 function Order() {
-  return;
+  return (
+    <div className="order">
+      <p>We're open till 22:00 come visit us or order online</p>
+      <button className="btn">Order</button>
+    </div>
+  );
 }
 
 export default App;
