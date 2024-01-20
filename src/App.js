@@ -110,13 +110,21 @@ function Footer() {
   const isOpen = hours >= open && hours <= close;
   console.log(isOpen);
 
-  return <div></div>;
+  return (
+    <div>
+      {isOpen ? (
+        <Order openHour={open} closeHour={close} />
+      ) : (
+        `We're open between ${open}:00 and ${close}:00. Please check back.`
+      )}
+    </div>
+  );
 }
 
-function Order() {
+function Order({ closeHour }) {
   return (
     <div className="order">
-      <p>We're open till 22:00 come visit us or order online</p>
+      <p>We're open till {closeHour}:00 come visit us or order online</p>
       <button className="btn">Order</button>
     </div>
   );
